@@ -25,8 +25,9 @@ print(meals)
 
 # Use single-bracket notation to extract your breakfast and lunch from your list
 # and save them to a list called `early_meals`
-early_meals <- meals[c("breakfast", "lunch")]
+early_meals <- list(meals[c("breakfast", "lunch")])
 print(early_meals)
+
 
 
 ### Challenge ###
