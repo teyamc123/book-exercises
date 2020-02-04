@@ -3,7 +3,7 @@
 # Install the `ins` package. Load (`library()`) the package.
 # You'll also need to load `dplyr`
 #library(dplyr)
-#library("nycflights13")
+library("nycflights13")
 View(flights)
 
 # The data frame `flights` should now be accessible to you.
@@ -26,7 +26,9 @@ flights <- arrange(flights, delayed_in_air)
 
 # For practice, repeat the last 2 steps in a single statement using the pipe
 # operator. You can clear your environmental variables to "reset" the data frame
-
+flights <- flights %>% 
+          mutate(gain_in_air = arr_delay - dep_delay) %>% 
+          arrange(desc(gain_in_air))
 
 # Make a histogram of the amount of time gained using the `hist()` function
 
