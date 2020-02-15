@@ -1,0 +1,43 @@
+---
+title: "R Markdown Demo"
+author: "Teya"
+date: "2/11/2020"
+output: html_document
+---
+
+##This is my report!
+
+This is **example** text that can be put into here
+Using curly brackets means it is executable code
+
+This is the code we will look at in class. Thisis just plain old Markdown that lets you rendertext in **bold** or _italics_. However, you canput in a block of R code, and the document willshow the code and the results!
+
+We can put arguments in the r function as well, the _echo_ means you won't be able to see the code block in the knit
+
+_include_ means not to show anything that has to do with the code
+
+
+
+``` {r example}
+library(knitr)
+numbers <- runif(1:100)
+hist(numbers)
+
+numbers_mean <- mean(numbers)
+
+img_url <- "![puppies](https://thehappypuppysite.com/wp-content/uploads/2018/07/samoyed-MG-long.jpg)"
+
+letters <- c("a", "b", "c", "d")
+numbers <- 1:4
+df <- data.frame(letters = letters, numbers = numbers)
+
+# "return" the table to render it
+kable(df)
+```
+
+this mean is the `r numbers_mean`
+
+No matter what, these will all pull from the same file, so the variable _numbers_ can be accessed in this chunk as well
+```{r other_chunk}
+print(numbers)
+```
